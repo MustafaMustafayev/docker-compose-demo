@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  frontend:
+    image: ${DOCKER_REGISTRY-}frontend
+    ports:
+      - "8061:80"
+      - "8062:443"
+
+  backend:
+    image: ${DOCKER_REGISTRY-}backend
+    ports:
+      - "8071:80"
+      - "8072:443"
+      
+networks:
+  default:
+    external:
+      name: test-network

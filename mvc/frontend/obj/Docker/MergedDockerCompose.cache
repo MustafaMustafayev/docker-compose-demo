@@ -1,0 +1,16 @@
+services:
+  frontend:
+    build:
+      context: C:\Users\Musta\Downloads\docker\mvc\frontend
+      dockerfile: frontend/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: frontend
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\Musta\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Musta\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'
